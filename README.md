@@ -18,10 +18,8 @@ BMK protocol is used for transporting data, mostly textual, via TCP using a form
 The delimeter is the following sequence: `\/|\|\/`. Every command with multiple parameters must be followed by it for it
 to be registered.
 
-`CRLF` determines the end of the command block (inserted automagically by the client program if they're any good).
-
 Every response from the server is given after a two second lag. This is a commonly requested feature by code reviewers
-(aka my friends; They didn't want to submit a pull request).
+(aka my friends; they didn't want to submit a pull request).
 
 The protocol syntax is as follows:
 ----------------------------------
@@ -43,6 +41,15 @@ The protocol syntax is as follows:
 `UMRIJECU_OD_BOLA_IZGORJELO_SVE_OD_ALKOHOLA\/|\|\/[messageBag]` - server response followed by the contents of the text
 
 `KUPI_STRIKA_CIPELE_I_DADE_DZEPARAC` - server response to a malformed (or illegal) message
+
+Usage
+-----
+Clone repo: `git clone https://github.com/mzdv/bmk-over-tcp.git`
+
+Run with: `node bmkServer.js`
+
+Use telnet or client of your choice and point it to `127.0.0.1:1389`
+
 
 Have fun.
 

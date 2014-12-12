@@ -17,7 +17,6 @@ net.createServer(function(socket) {
     socket
         .on("data", function(data) {
             socket.write(data.toString());
-            socket.write('');
             console.log(data.toString());
 
             incomingData += data.toString();
