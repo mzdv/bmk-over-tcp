@@ -27,13 +27,13 @@ The termination character for every request is the `~` (tilde) sign. Just add it
 The protocol syntax is as follows:
 ----------------------------------
 
-`VOZI_ME_ZA_SURCIN` - announces the existence to the server
+`DJE_SI_GRGA_DRUZE_STARI` - announces the existence to the server
 
-`PREKO_LEDINA` - server response to the announcement
+`ZA_NAPLATU_TI_NE_MARI` - server response to the announcement
 
-`TAMO_ZIVI\/|\|\/[data]` - where [data] is the transmitting data from the client
+`VOZI_ME_ZA_SURCIN_PREKO_LEDINA\/|\|\/[data]` - where [data] is the transmitting data from the client
 
-`MOJA_JEDINA` - server response to accepted data
+`TAMO_ZIVI_MOJA_JEDINA` - server response to accepted data
 
 `VREME_BRZO_PROLAZI` - checking if the server has gotten a timeout
 
