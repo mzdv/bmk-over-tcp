@@ -24,14 +24,14 @@ net.createServer(function(socket) {
                 message = incomingData.split(DELIMETER);
 
                 switch (message[0]) {
-                    case "VOZI_ME_ZA_SURCIN":
-                        socket.write("PREKO_LEDINA\n");
+                    case "DJE_SI_GRGA_DRUZE_STARI":
+                        socket.write("ZA_NAPLATU_TI_NE_MARI\n");
                         break;
 
-                    case "TAMO_ZIVI":
+                    case "VOZI_ME_ZA_SURCIN_PREKO_LEDINA":
                         messageBag += message[1] + "\n";
                         setTimeout(function() {
-                            socket.write("MOJA_JEDINA\n");
+                            socket.write("TAMO_ZIVI_MOJA_JEDINA\n");
                         }, LAG);
                         break;
 
