@@ -22,6 +22,8 @@ to be registered.
 Every response from the server is given after a two second lag. This is a commonly requested feature by code reviewers
 (aka my friends; they didn't want to submit a pull request).
 
+The termination character for every request is the `~` (tilde) sign. Just add it as the last character of your request.
+
 The protocol syntax is as follows:
 ----------------------------------
 
