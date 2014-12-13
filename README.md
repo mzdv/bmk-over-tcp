@@ -6,14 +6,15 @@ or "Vozi me na Pale".
 DISCLAIMER
 ==========
 This was made as a joke, don't take it seriously. It's a good programming exercise to implement your own protocol.
-I learned a ton from it. And now for the fun parts:
+I discovered a ton from it. And now for the fun parts:
 
 Additional info
 ---------------
 
-Repository contains both the server and client implementations of the protocol in the form of a message storing server.
+Repository contains the server implementation of the protocol in the form of a message storing server.
 
-BMK protocol is used for transporting data, mostly textual, via TCP using a form of additional encapsulation.
+BMK protocol is used for transporting data, mostly textual, but binary is possible, via TCP using a form of additional
+encapsulation.
 
 The delimeter is the following sequence: `\/|\|\/`. Every command with multiple parameters must be followed by it for it
 to be registered.
@@ -42,6 +43,8 @@ The protocol syntax is as follows:
 
 `KUPI_STRIKA_CIPELE_I_DADE_DZEPARAC` - server response to a malformed (or illegal) message
 
+`RAKIJA_MI_SE_PRIBLIZILA_DUSI` - closes the connection
+
 Usage
 -----
 Clone repo: `git clone https://github.com/mzdv/bmk-over-tcp.git`
@@ -53,7 +56,7 @@ Use telnet or client of your choice and point it to `127.0.0.1:1389`
 
 Have fun.
 
-Baja Mali Knindza, all rights reserved (c)
+I do not own the rights to Baja Mali Knindza.
 
 License
 =======
