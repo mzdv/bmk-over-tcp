@@ -45,6 +45,8 @@ The protocol syntax is as follows:
 
 `RAKIJA_MI_SE_PRIBLIZILA_DUSI` - closes the connection
 
+`CRNA_MI_SE_DZIGERICA_SUSI` - server response when it starts processing the closing operation
+
 Usage
 -----
 Clone repo: `git clone https://github.com/mzdv/bmk-over-tcp.git`
