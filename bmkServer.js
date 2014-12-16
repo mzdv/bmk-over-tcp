@@ -29,12 +29,12 @@ net.createServer(function(socket) {
                         id = Math.floor(Math.random() * 100);
 
                         if(_.contains(ids, id))
-                            break;
+                            id += Math.floor(Math.random() * 100);
                         else
                             ids.push(id);
 
                         setTimeout(function() {
-                        socket.write("ZA_NAPLATU_TI_NE_MARI\n" + DELIMETER + id);
+                            socket.write("ZA_NAPLATU_TI_NE_MARI\n" + DELIMETER + id);
                         }, LAG);
                         break;
 
