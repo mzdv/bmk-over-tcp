@@ -1,7 +1,7 @@
 bmk-over-tcp
 ===========
 Application protocol based on the song "Grga taksista" from Baja Mali Knindza, commonly called as "Vozi me za Surcin"
-or "Vozi me na Pale".
+or "Vozi me na Pale" extended with several other songs such as "Duni vjetre malo preko jetre" and "Bulevar Revolucije".
 
 DISCLAIMER
 ==========
@@ -30,6 +30,10 @@ The protocol syntax is as follows:
 `DJE_SI_GRGA_DRUZE_STARI` - announces the existence to the server
 
 `ZA_NAPLATU_TI_NE_MARI\/|\|\/[id]` - positive server response to the announcement with the given id; if it's taken, it assigns the next one
+
+`IMA_JEDNA_KRCMA_STARA_TAMO_NASRED_BULEVARA` - request to list all client numbers
+
+`BULEVARA_REVOLUCIJE\/|\|\/[idArray]` - server response with an array of id numbers`
 
 `VOZI_ME_ZA_SURCIN_PREKO_LEDINA\/|\|\/[data]` - where [data] is the transmitting data from the client
 

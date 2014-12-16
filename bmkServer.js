@@ -23,10 +23,10 @@ net.createServer(function(socket) {
                 incomingData += data.toString();
             } else {
                 message = incomingData.split(DELIMETER);
+                id = Math.floor(Math.random() * 100);
 
                 switch (message[0]) {
                     case "DJE_SI_GRGA_DRUZE_STARI":
-                        id = Math.floor(Math.random() * 100);
 
                         if(_.contains(ids, id))
                             id += Math.floor(Math.random() * 100);
@@ -34,7 +34,13 @@ net.createServer(function(socket) {
                             ids.push(id);
 
                         setTimeout(function() {
-                            socket.write("ZA_NAPLATU_TI_NE_MARI\n" + DELIMETER + id);
+                            socket.write("ZA_NAPLATU_TI_NE_MARI" + DELIMETER + id + "\n");
+                        }, LAG);
+                        break;
+
+                    case "IMA_JEDNA_KRCMA_STARA_TAMO_NASRED_BULEVARA":
+                        setTimeout(function() {
+                            socket.write("BULEVARA_REVOLUCIJE" + DELIMETER + ids + "\n");
                         }, LAG);
                         break;
 
@@ -60,6 +66,7 @@ net.createServer(function(socket) {
                     case "RAKIJA_MI_SE_PRIBLIZILA_DUSI":               //same as above
                         setTimeout(function() {
                             socket.write("CRNA_MI_SE_DZIGERICA_SUSI\n");
+                            ids.pop(id);
                             socket.destroy();
                         }, LAG);
                         break;
