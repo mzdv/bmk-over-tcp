@@ -1,5 +1,8 @@
 {
   "name": "bmk-over-tcp",
   "version": "1.0.0",
-  "repository": "https://github.com/mzdv/bmk-over-tcp.git"
+  "repository": "https://github.com/mzdv/bmk-over-tcp.git",
+  "dependencies": {
+    "lodash": "*"
+  }
 }

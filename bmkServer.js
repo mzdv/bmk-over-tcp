@@ -3,13 +3,15 @@
  */
 
 var net = require("net");
+var _ = require("lodash");
 
 const LAG = 2000;               //because Baja Mali Knindza needs some time to think
 const DELIMETER = "\\/|\\|\\/"; //if you look closely, it spells out VNV, as in VNV Nation
 
 var incomingData = '';
 var messageBag = '';            //structure used for storing data (PoC)
-var message = [];
+var message = [];               //parsing structure
+var ids = [];                   //id holder
 
 net.createServer(function(socket) {
     socket.setEncoding("utf8");
@@ -17,7 +19,6 @@ net.createServer(function(socket) {
     socket
         .on("data", function(data) {
             if (data.toString() !== '~') {
-                console.log(data.toString());
                 socket.write(data.toString());
                 incomingData += data.toString();
             } else {
@@ -25,7 +26,16 @@ net.createServer(function(socket) {
 
                 switch (message[0]) {
                     case "DJE_SI_GRGA_DRUZE_STARI":
-                        socket.write("ZA_NAPLATU_TI_NE_MARI\n");
+                        id = Math.floor(Math.random() * 100);
+
+                        if(_.contains(ids, id))
+                            break;
+                        else
+                            ids.push(id);
+
+                        setTimeout(function() {
+                        socket.write("ZA_NAPLATU_TI_NE_MARI\n" + DELIMETER + id);
+                        }, LAG);
                         break;
 
                     case "VOZI_ME_ZA_SURCIN_PREKO_LEDINA":

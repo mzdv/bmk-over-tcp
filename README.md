@@ -29,7 +29,7 @@ The protocol syntax is as follows:
 
 `DJE_SI_GRGA_DRUZE_STARI` - announces the existence to the server
 
-`ZA_NAPLATU_TI_NE_MARI` - server response to the announcement
+`ZA_NAPLATU_TI_NE_MARI\/|\|\/[id]` - positive server response to the announcement with the given id; if it's taken, it assigns the next one
 
 `VOZI_ME_ZA_SURCIN_PREKO_LEDINA\/|\|\/[data]` - where [data] is the transmitting data from the client
 
