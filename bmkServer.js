@@ -65,9 +65,9 @@ net.createServer(function(socket) {
 
                     case "RAKIJA_MI_SE_PRIBLIZILA_DUSI":               //same as above
                         setTimeout(function() {
-                            socket.write("CRNA_MI_SE_DZIGERICA_SUSI\n");
+                            socket.end("CRNA_MI_SE_DZIGERICA_SUSI\n");
                             ids.pop(id);
-                            socket.destroy();
+
                         }, LAG);
                         break;
 
@@ -83,7 +83,7 @@ net.createServer(function(socket) {
         })
 
         .on("close", function() {
-            socket.destroy();
+            socket.end();
         })
         .on("error", function(error) {
             console.log(error.toString());
