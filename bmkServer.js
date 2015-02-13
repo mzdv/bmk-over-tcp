@@ -4,6 +4,7 @@
 
 var net = require("net");
 var _ = require("lodash");
+var switches = require("switches");
 
 const LAG = 2000;               // because Baja Mali Knindza needs some time to think
 const DELIMETER = "\\/|\\|\\/"; // if you look closely, it spells out VNV, as in VNV Nation
