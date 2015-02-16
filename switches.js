@@ -8,8 +8,7 @@ var switches = [
     { value: "VOZI_ME_ZA_SURCIN_PREKO_LEDINA", answer: "TAMO_ZIVI_MOJA_JEDINA"},
     { value: "VREME_BRZO_PROLAZI", answer: "GODINE_ME_STIZU"},
     { value: "DUNI_VJETRE_MALO_PREKO_JETRE", answer: "UMRIJECU_OD_BOLA_IZGORJELO_SVE_OD_ALKOHOLA"},
-    { value: "RAKIJA_MI_SE_PRIBLIZILA_DUSI", answer: "CRNA_MI_SE_DZIGERICA_SUSI"},
-    { value: "unknown", answer: "KUPI_STRIKA_CIPELE_I_DADE_DZEPARAC"}
+    { value: "RAKIJA_MI_SE_PRIBLIZILA_DUSI", answer: "CRNA_MI_SE_DZIGERICA_SUSI"}
 ];
 
 module.exports = switches;
