@@ -4,7 +4,7 @@
 
 var net = require("net");
 var _ = require("lodash");
-var switches = require("switches");
+var switches = require("./switches");
 
 const LAG = 2000;               // because Baja Mali Knindza needs some time to think
 const DELIMETER = "\\/|\\|\\/"; // if you look closely, it spells out VNV, as in VNV Nation
@@ -42,8 +42,9 @@ net.createServer(function(socket) {
                         break;
 
                     case "IMA_JEDNA_KRCMA_STARA_TAMO_NASRED_BULEVARA":
+                        var payload = _.chain(switches).find(function(pair) { return _.isEqual(pair.value, message[0])}).result("answer").value();
                         setTimeout(function() {
-                            socket.write("BULEVARA_REVOLUCIJE" + DELIMETER + ids + "\n");
+                            socket.write(payload + DELIMETER + ids + "\n");
                         }, LAG);
                         break;
 
