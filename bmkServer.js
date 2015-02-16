@@ -30,14 +30,11 @@ net.createServer(function(socket) {
 
                 switch (message[0]) {
                     case "DJE_SI_GRGA_DRUZE_STARI":
+                        _.contains(ids, id) ? id += Math.floor(Math.random() * 100) : ids.push(id);
 
-                        if(_.contains(ids, id))
-                            id += Math.floor(Math.random() * 100);
-                        else
-                            ids.push(id);
-
+                        var payload = _.chain(switches).find(function(pair) { return _.isEqual(pair.value, message[0])}).result("answer").value();
                         setTimeout(function() {
-                            socket.write("ZA_NAPLATU_TI_NE_MARI" + DELIMETER + id + "\n");
+                            socket.write(payload + DELIMETER + id + "\n");
                         }, LAG);
                         break;
 
@@ -49,27 +46,33 @@ net.createServer(function(socket) {
                         break;
 
                     case "VOZI_ME_ZA_SURCIN_PREKO_LEDINA":
-                        messageBag += message[1] + "\n";
+                        messageBag += message[1] + '\n';
+
+                        var payload = _.chain(switches).find(function(pair) { return _.isEqual(pair.value, message[0])}).result("answer").value();
                         setTimeout(function() {
-                            socket.write("TAMO_ZIVI_MOJA_JEDINA\n");
+                            socket.write(payload + '\n');
                         }, LAG);
                         break;
 
                     case "VREME_BRZO_PROLAZI":
+                        var payload = _.chain(switches).find(function(pair) { return _.isEqual(pair.value, message[0])}).result("answer").value();
                         setTimeout(function() {
-                            socket.write("GODINE_ME_STIZU\n");
+                            socket.write(payload + '\n');
                         }, LAG);
                         break;
 
                     case "DUNI_VJETRE_MALO_PREKO_JETRE":            //symbolic meaning, not the same song as above
+                        var payload = _.chain(switches).find(function(pair) { return _.isEqual(pair.value, message[0])}).result("answer").value();
+
                         setTimeout(function () {
-                            socket.write("UMRIJECU_OD_BOLA_IZGORJELO_SVE_OD_ALKOHOLA" + DELIMETER + messageBag + '\n');
+                            socket.write(payload + DELIMETER + messageBag + '\n');
                         }, LAG);
                         break;
 
                     case "RAKIJA_MI_SE_PRIBLIZILA_DUSI":               //same as above
+                        var payload = _.chain(switches).find(function(pair) { return _.isEqual(pair.value, message[0])}).result("answer").value();
                         setTimeout(function() {
-                            socket.end("CRNA_MI_SE_DZIGERICA_SUSI\n");
+                            socket.end(payload + '\n');
                             ids.pop(id);
 
                         }, LAG);
