@@ -29,7 +29,7 @@ net.createServer(function(socket) {
                 incomingData += data.toString();
             } else {
                 message = incomingData.split(DELIMETER);
-                id = Math.floor(Math.random() * 100);
+                var id = Math.floor(Math.random() * 100);
                 var payload =_.chain(switches)
                     .find(function(pair) { return _.isEqual(pair.value, message[0])})
                     .result("answer")
